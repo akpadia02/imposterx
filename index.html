@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Instagram Profile Scraper</h1>
+    <input type="text" id="profileUrl" placeholder="Enter Instagram Profile URL">
+    <button onclick="scrapeProfile()">Scrape</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function scrapeProfile() {
+            const profile = document.getElementById("profileUrl").value;
+            if (!profile) {
+                alert("Please enter an Instagram profile URL.");
+                return;
+            }
+
+            const response = await fetch("http://localhost:3000/scrape", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ profile })
+            });
+
+            const data = await response.json();
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = `
+                <h3>Scraped Data:</h3>
+                <p><strong>Followers:</strong> ${data.followers}</p>
+                <p><strong>Following:</strong> ${data.following}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- 
+<p><strong>Posts:</strong> ${data.posts}</p>
+<p><strong>First Post Likes:</strong> ${data.firstPostLikes}</p>
+<p><strong>First Post Comments:</strong> ${data.firstPostComments}</p> -->
