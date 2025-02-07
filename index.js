@@ -274,9 +274,9 @@ const scrapeInstagram = async (profileUrl) => {
   // Launch headless Puppeteer
   const browser = await puppeteer.launch({
     headless: "new",
-    executablePath: process.env.CHROME_BIN || "/usr/bin/google-chrome",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+  
   
 
   const page = await browser.newPage();
