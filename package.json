@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "build": "npx puppeteer install chrome@stable && node index.js",
-    "postinstall": "npx puppeteer install chrome@stable",
+    "postinstall": "npx puppeteer browsers install chrome",
     "vercel-build": "echo 'Building...'"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "fs": "0.0.1-security",
-    "puppeteer": "^24.2.0",
+     "puppeteer": "^21.0.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
