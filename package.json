@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "npx puppeteer browsers install chrome && node index.js",
-    "postinstall": "npx puppeteer browsers install chrome",
+    "build": "npx puppeteer browsers install chrome && npx puppeteer browsers install chromium && node index.js",
+    "postinstall": "npx puppeteer browsers install chrome && npx puppeteer browsers install chromium",
     "vercel-build": "echo 'Building...'"
   },
   "dependencies": {

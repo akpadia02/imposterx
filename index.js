@@ -237,6 +237,7 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import puppeteer from "puppeteer";     // Official Puppeteer
 import * as cheerio from "cheerio";
+import chromium from "@sparticuz/chromium";
 
 // For ES Modules, get __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -273,8 +274,9 @@ app.get("/", (req, res) => {
 const scrapeInstagram = async (profileUrl) => {
   // Launch headless Puppeteer
   const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    headless: chromium.headless,
+    executablePath: await chromium.executablePath(),
+    args: chromium.args,
   });
   
   
