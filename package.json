@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "build": "npx puppeteer browsers install chrome && node index.js",
-    "postinstall": "npx puppeteer browsers install",
+    "postinstall": "npx puppeteer browsers install chrome",
     "vercel-build": "echo 'Building...'"
   },
   "dependencies": {
