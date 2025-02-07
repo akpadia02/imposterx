@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "npx puppeteer browsers install chrome && npx puppeteer browsers install chromium && node index.js",
-    "postinstall": "npx puppeteer browsers install chrome && npx puppeteer browsers install chromium",
+    "build": "npx puppeteer install chrome@stable && node index.js",
+    "postinstall": "npx puppeteer install chrome@stable",
     "vercel-build": "echo 'Building...'"
   },
   "dependencies": {
@@ -16,7 +16,6 @@
     "express": "^4.18.2",
     "fs": "0.0.1-security",
     "puppeteer": "^24.2.0",
-    "puppeteer-core": "^10.1.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   }

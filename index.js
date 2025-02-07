@@ -238,6 +238,7 @@ import fs from "fs";
 import puppeteer from "puppeteer";     // Official Puppeteer
 import * as cheerio from "cheerio";
 import chromium from "@sparticuz/chromium";
+process.env.PUPPETEER_CACHE_DIR = "/opt/render/.cache/puppeteer";
 
 // For ES Modules, get __dirname
 const __filename = fileURLToPath(import.meta.url);
